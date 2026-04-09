@@ -111,3 +111,6 @@ def score(event: AccessEvent):
     except Exception as e:
         print("ERROR:", str(e))
         raise HTTPException(status_code=500, detail=str(e))
+@app.get("/metrics")
+def metrics():
+    return METRICS
