@@ -6,7 +6,7 @@ import pickle, json, numpy as np
 from datetime import datetime
 import os
 
-# ✅ Correct base path
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MODEL_PATH = os.path.join(BASE_DIR, "ml_artifacts", "model.pkl")
@@ -75,18 +75,18 @@ def score(event: AccessEvent):
 
         print("Input vec:", vec, "shape:", vec.shape)
 
-        # 🔍 check expected features
+        
         expected = getattr(scaler, "n_features_in_", None)
         print("Scaler expects:", expected, "features")
 
-        # ✅ Auto-fix mismatch (for demo stability)
+        
         if expected is not None and vec.shape[1] != expected:
             if vec.shape[1] < expected:
-                # pad with zeros
+                
                 pad = np.zeros((1, expected - vec.shape[1]))
                 vec = np.hstack([vec, pad])
             else:
-                # trim extra
+                
                 vec = vec[:, :expected]
 
             print("Adjusted vec:", vec, "shape:", vec.shape)
