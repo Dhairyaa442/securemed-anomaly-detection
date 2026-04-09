@@ -130,22 +130,6 @@ Detect anomaly for a single access event.
 * Easily integrable with healthcare systems
 
 ---
-## 📸 API Demo
-
-### 🔴 Anomaly Detection (High Risk)
-
-![Anomaly Detection](docs/api_anomaly.png)
-
-The system flags unusual access patterns (off-hours, high volume, unknown IP) as high-risk anomalies.
-
----
-
-### 🟢 Normal Access (Low Risk)
-
-![Normal Case](docs/api_normal.png)
-
-Typical access patterns during working hours are classified as low risk.
-
 ## 👤 Author
 
 Dhairya Mehta
